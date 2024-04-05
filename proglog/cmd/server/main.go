@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/fabiodemo/distributed-systems-golang/teste2/internal/server"
+	"github.com/fabiodemo/distributed-systems-golang/proglog/internal/server"
 )
 
 func main() {
