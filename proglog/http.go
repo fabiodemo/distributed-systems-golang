@@ -18,7 +18,7 @@ func NewHTTPServer(addr string) *http.Server {
 	}
 }
 
-type httpServer struc {
+type httpServer struct {
 	Log *Log
 }
 
@@ -36,14 +36,13 @@ type ProduceResponse struct {
 	Offset uint64 `json:"offset"`
 }
 
-tyep ConsumeRequest struct {
+type ConsumeRequest struct {
 	Offset uint64 `json:"offset"`
 }
 
 type ConsumeResponse struct {
 	Record Record `json:"record"`
 }
-
 
 func (s *httpServer) HandleProduce(w http.ResponseWriter, r *http.Request) {
 	var req produceRequest
@@ -65,7 +64,7 @@ func (s *httpServer) HandleProduce(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func (s *httpServer) handleConsume(w, http.ResponseWriter, r *http.Request){
+func (s *httpServer) handleConsume(w http.ResponseWriter, r *http.Request) {
 	var req ConsumeRequest
 	err := json.NewDecoder(r.Body).Decode(&req)
 	if err != nil {
