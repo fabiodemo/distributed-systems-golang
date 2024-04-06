@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package twitter;
 
+option go_package = "github.com/fabiodemo/distributed-systems-golang/StructureDataWithProtobuf";
+
 message Tweet {
     string message = 1;
 }
